@@ -149,3 +149,7 @@ production performance, pricing, or qualification claims.
 - Human review and approval remain application-controlled.
 - Secrets belong only in the ignored `.env` file.
 - Databricks writes are limited to training governance and audit data.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
