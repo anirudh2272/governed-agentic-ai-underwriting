@@ -1,0 +1,446 @@
+{
+  "report": {
+    "catalog_rows_loaded": 3,
+    "happy_path_valid": true,
+    "restricted_data_blocked": true,
+    "unqualified_premium_failed_closed": true,
+    "prohibited_tool_blocked": true,
+    "agent_step_limit_enforced": true,
+    "estimated_cost_limit_enforced": true,
+    "human_authorization_enforced": true,
+    "telemetry_events_written": 7,
+    "telemetry_valid": true,
+    "all_results_safe": true,
+    "claude_api_calls": 0,
+    "databricks_reads": 1,
+    "databricks_writes": 0,
+    "underwriting_actions_executed": 0,
+    "lab_verified": true
+  },
+  "scenario_results": {
+    "happy_path": {
+      "case_id": "CASE-001",
+      "task_type": "WORKFLOW_NEXT_STEP",
+      "data_classification": "SYNTHETIC_TRAINING",
+      "requested_action": "REQUEST_EVIDENCE",
+      "requested_tools": [],
+      "requested_agent_steps": 0,
+      "route": "NO_LLM",
+      "route_decision": {
+        "task_type": "WORKFLOW_NEXT_STEP",
+        "route": "NO_LLM",
+        "model_required": false,
+        "requested_capability": null,
+        "deterministic_result": "REQUEST_EVIDENCE",
+        "reason_code": "AUTHORITATIVE_ANSWER_AVAILABLE"
+      },
+      "route_policy": {
+        "route": "NO_LLM",
+        "allowed_data_classifications": [
+          "CONFIDENTIAL",
+          "INTERNAL",
+          "PUBLIC",
+          "RESTRICTED",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [],
+        "max_agent_steps": 0,
+        "max_estimated_model_cost_usd": 0.0
+      },
+      "model_selection": {
+        "requested_route": "NO_LLM",
+        "selection_status": "SELECTED",
+        "reason_code": "QUALIFIED_LOWEST_ESTIMATED_COST",
+        "catalog_entry_id": "no_llm_deterministic",
+        "model_id": "NO_LLM",
+        "provider": "APPLICATION",
+        "capability_tier": "DETERMINISTIC",
+        "governance_status": "QUALIFIED_FOR_TRAINING",
+        "estimated_model_cost_usd": 0.0,
+        "qualification_sample_size": 1,
+        "allowed_for_consequential_decisions": false,
+        "model_call_executed": false,
+        "external_action_executed": false,
+        "coverage_decision_executed": false
+      },
+      "model_tools_exposed": [],
+      "policy_tool_call": {
+        "tool_name": "compliance_rules",
+        "status": "SUCCESS",
+        "executed": true,
+        "reason_code": "READ_ONLY_TOOL_EXECUTED",
+        "result": {
+          "case_id": "CASE-001",
+          "policy_id": "LAB-UW-POLICY-001",
+          "required_evidence": [
+            "wind_mitigation",
+            "contractor_loss_history"
+          ],
+          "outstanding_evidence": [
+            "wind_mitigation",
+            "contractor_loss_history"
+          ],
+          "evidence_status": "INCOMPLETE",
+          "human_review_required": true,
+          "human_approval_required": true,
+          "next_step": "REQUEST_EVIDENCE"
+        },
+        "external_action_executed": false
+      },
+      "authorization": {
+        "case_id": "CASE-001",
+        "policy_id": "LAB-UW-POLICY-001",
+        "requested_action": "REQUEST_EVIDENCE",
+        "policy_next_step": "REQUEST_EVIDENCE",
+        "human_review_required": true,
+        "human_approval_required": true,
+        "human_approval_supplied": false,
+        "external_action_executed": false,
+        "coverage_decision_executed": false,
+        "authorization_status": "PERMITTED",
+        "reason_code": "POLICY_CONTROLLED_WORKFLOW_STEP"
+      },
+      "execution": {
+        "route": "NO_LLM",
+        "requested_capability": null,
+        "execution_mode": "DETERMINISTIC",
+        "model_id": null,
+        "model_calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "response_text": "REQUEST_EVIDENCE",
+        "stop_reason": "DETERMINISTIC_COMPLETION",
+        "latency_ms": 0.0
+      },
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "control_plane_status": "COMPLETED",
+      "reason_code": "GOVERNED_EXECUTION_COMPLETED"
+    },
+    "restricted_data": {
+      "case_id": "CASE-001",
+      "task_type": "UNDERWRITING_ANALYSIS",
+      "data_classification": "RESTRICTED",
+      "requested_action": null,
+      "requested_tools": [],
+      "requested_agent_steps": 1,
+      "route": "PREMIUM_REASONING",
+      "route_decision": {
+        "task_type": "UNDERWRITING_ANALYSIS",
+        "route": "PREMIUM_REASONING",
+        "model_required": true,
+        "requested_capability": "PREMIUM_REASONING",
+        "deterministic_result": null,
+        "reason_code": "HIGH_COMPLEXITY_OR_BUSINESS_RISK"
+      },
+      "route_policy": {
+        "route": "PREMIUM_REASONING",
+        "allowed_data_classifications": [
+          "INTERNAL",
+          "PUBLIC",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [
+          "base_score",
+          "compliance_rules",
+          "loss_history",
+          "submission",
+          "weather_risk"
+        ],
+        "max_agent_steps": 6,
+        "max_estimated_model_cost_usd": 0.01
+      },
+      "model_selection": null,
+      "model_tools_exposed": [],
+      "policy_tool_call": null,
+      "authorization": null,
+      "execution": null,
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "control_plane_status": "BLOCKED",
+      "reason_code": "DATA_CLASSIFICATION_NOT_ALLOWED"
+    },
+    "unqualified_premium": {
+      "case_id": "CASE-001",
+      "task_type": "UNDERWRITING_ANALYSIS",
+      "data_classification": "SYNTHETIC_TRAINING",
+      "requested_action": null,
+      "requested_tools": [
+        "compliance_rules",
+        "submission"
+      ],
+      "requested_agent_steps": 2,
+      "route": "PREMIUM_REASONING",
+      "route_decision": {
+        "task_type": "UNDERWRITING_ANALYSIS",
+        "route": "PREMIUM_REASONING",
+        "model_required": true,
+        "requested_capability": "PREMIUM_REASONING",
+        "deterministic_result": null,
+        "reason_code": "HIGH_COMPLEXITY_OR_BUSINESS_RISK"
+      },
+      "route_policy": {
+        "route": "PREMIUM_REASONING",
+        "allowed_data_classifications": [
+          "INTERNAL",
+          "PUBLIC",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [
+          "base_score",
+          "compliance_rules",
+          "loss_history",
+          "submission",
+          "weather_risk"
+        ],
+        "max_agent_steps": 6,
+        "max_estimated_model_cost_usd": 0.01
+      },
+      "model_selection": {
+        "requested_route": "PREMIUM_REASONING",
+        "selection_status": "NO_QUALIFIED_MODEL",
+        "reason_code": "FAIL_CLOSED_CATALOG_FILTER",
+        "catalog_entry_id": null,
+        "model_id": null,
+        "provider": null,
+        "capability_tier": null,
+        "governance_status": null,
+        "estimated_model_cost_usd": null,
+        "qualification_sample_size": null,
+        "allowed_for_consequential_decisions": false,
+        "model_call_executed": false,
+        "external_action_executed": false,
+        "coverage_decision_executed": false
+      },
+      "model_tools_exposed": [],
+      "policy_tool_call": null,
+      "authorization": null,
+      "execution": null,
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "control_plane_status": "BLOCKED",
+      "reason_code": "MODEL_SELECTION_FAILED"
+    },
+    "prohibited_tool": {
+      "case_id": "CASE-001",
+      "task_type": "STATUS_SUMMARY",
+      "data_classification": "SYNTHETIC_TRAINING",
+      "requested_action": null,
+      "requested_tools": [
+        "submission"
+      ],
+      "requested_agent_steps": 1,
+      "route": "CONVERSATIONAL",
+      "route_decision": {
+        "task_type": "STATUS_SUMMARY",
+        "route": "CONVERSATIONAL",
+        "model_required": true,
+        "requested_capability": "CONVERSATIONAL",
+        "deterministic_result": null,
+        "reason_code": "STANDARD_LANGUAGE_TASK"
+      },
+      "route_policy": {
+        "route": "CONVERSATIONAL",
+        "allowed_data_classifications": [
+          "INTERNAL",
+          "PUBLIC",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [],
+        "max_agent_steps": 1,
+        "max_estimated_model_cost_usd": 0.003
+      },
+      "model_selection": null,
+      "model_tools_exposed": [],
+      "policy_tool_call": null,
+      "authorization": null,
+      "execution": null,
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "prohibited_tools": [
+        "submission"
+      ],
+      "control_plane_status": "BLOCKED",
+      "reason_code": "TOOL_NOT_ALLOWED_FOR_ROUTE"
+    },
+    "step_limit": {
+      "case_id": "CASE-001",
+      "task_type": "STATUS_SUMMARY",
+      "data_classification": "SYNTHETIC_TRAINING",
+      "requested_action": null,
+      "requested_tools": [],
+      "requested_agent_steps": 2,
+      "route": "CONVERSATIONAL",
+      "route_decision": {
+        "task_type": "STATUS_SUMMARY",
+        "route": "CONVERSATIONAL",
+        "model_required": true,
+        "requested_capability": "CONVERSATIONAL",
+        "deterministic_result": null,
+        "reason_code": "STANDARD_LANGUAGE_TASK"
+      },
+      "route_policy": {
+        "route": "CONVERSATIONAL",
+        "allowed_data_classifications": [
+          "INTERNAL",
+          "PUBLIC",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [],
+        "max_agent_steps": 1,
+        "max_estimated_model_cost_usd": 0.003
+      },
+      "model_selection": null,
+      "model_tools_exposed": [],
+      "policy_tool_call": null,
+      "authorization": null,
+      "execution": null,
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "control_plane_status": "BLOCKED",
+      "reason_code": "AGENT_STEP_LIMIT_EXCEEDED"
+    },
+    "cost_limit": {
+      "case_id": "CASE-001",
+      "task_type": "STATUS_SUMMARY",
+      "data_classification": "SYNTHETIC_TRAINING",
+      "requested_action": null,
+      "requested_tools": [],
+      "requested_agent_steps": 1,
+      "route": "CONVERSATIONAL",
+      "route_decision": {
+        "task_type": "STATUS_SUMMARY",
+        "route": "CONVERSATIONAL",
+        "model_required": true,
+        "requested_capability": "CONVERSATIONAL",
+        "deterministic_result": null,
+        "reason_code": "STANDARD_LANGUAGE_TASK"
+      },
+      "route_policy": {
+        "route": "CONVERSATIONAL",
+        "allowed_data_classifications": [
+          "INTERNAL",
+          "PUBLIC",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [],
+        "max_agent_steps": 1,
+        "max_estimated_model_cost_usd": 0.003
+      },
+      "model_selection": {
+        "requested_route": "CONVERSATIONAL",
+        "selection_status": "SELECTED",
+        "reason_code": "QUALIFIED_LOWEST_ESTIMATED_COST",
+        "catalog_entry_id": "haiku_45_conversational",
+        "model_id": "claude-haiku-4-5-20251001",
+        "provider": "ANTHROPIC",
+        "capability_tier": "CONVERSATIONAL",
+        "governance_status": "QUALIFIED_FOR_TRAINING",
+        "estimated_model_cost_usd": 0.007,
+        "qualification_sample_size": 1,
+        "allowed_for_consequential_decisions": false,
+        "model_call_executed": false,
+        "external_action_executed": false,
+        "coverage_decision_executed": false
+      },
+      "model_tools_exposed": [],
+      "policy_tool_call": null,
+      "authorization": null,
+      "execution": null,
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "control_plane_status": "BLOCKED",
+      "reason_code": "ESTIMATED_COST_LIMIT_EXCEEDED"
+    },
+    "authorization_boundary": {
+      "case_id": "CASE-001",
+      "task_type": "WORKFLOW_NEXT_STEP",
+      "data_classification": "SYNTHETIC_TRAINING",
+      "requested_action": "BIND_COVERAGE",
+      "requested_tools": [],
+      "requested_agent_steps": 0,
+      "route": "NO_LLM",
+      "route_decision": {
+        "task_type": "WORKFLOW_NEXT_STEP",
+        "route": "NO_LLM",
+        "model_required": false,
+        "requested_capability": null,
+        "deterministic_result": "REQUEST_EVIDENCE",
+        "reason_code": "AUTHORITATIVE_ANSWER_AVAILABLE"
+      },
+      "route_policy": {
+        "route": "NO_LLM",
+        "allowed_data_classifications": [
+          "CONFIDENTIAL",
+          "INTERNAL",
+          "PUBLIC",
+          "RESTRICTED",
+          "SYNTHETIC_TRAINING"
+        ],
+        "allowed_tools": [],
+        "max_agent_steps": 0,
+        "max_estimated_model_cost_usd": 0.0
+      },
+      "model_selection": {
+        "requested_route": "NO_LLM",
+        "selection_status": "SELECTED",
+        "reason_code": "QUALIFIED_LOWEST_ESTIMATED_COST",
+        "catalog_entry_id": "no_llm_deterministic",
+        "model_id": "NO_LLM",
+        "provider": "APPLICATION",
+        "capability_tier": "DETERMINISTIC",
+        "governance_status": "QUALIFIED_FOR_TRAINING",
+        "estimated_model_cost_usd": 0.0,
+        "qualification_sample_size": 1,
+        "allowed_for_consequential_decisions": false,
+        "model_call_executed": false,
+        "external_action_executed": false,
+        "coverage_decision_executed": false
+      },
+      "model_tools_exposed": [],
+      "policy_tool_call": {
+        "tool_name": "compliance_rules",
+        "status": "SUCCESS",
+        "executed": true,
+        "reason_code": "READ_ONLY_TOOL_EXECUTED",
+        "result": {
+          "case_id": "CASE-001",
+          "policy_id": "LAB-UW-POLICY-001",
+          "required_evidence": [
+            "wind_mitigation",
+            "contractor_loss_history"
+          ],
+          "outstanding_evidence": [
+            "wind_mitigation",
+            "contractor_loss_history"
+          ],
+          "evidence_status": "INCOMPLETE",
+          "human_review_required": true,
+          "human_approval_required": true,
+          "next_step": "REQUEST_EVIDENCE"
+        },
+        "external_action_executed": false
+      },
+      "authorization": {
+        "case_id": "CASE-001",
+        "policy_id": "LAB-UW-POLICY-001",
+        "requested_action": "BIND_COVERAGE",
+        "policy_next_step": "REQUEST_EVIDENCE",
+        "human_review_required": true,
+        "human_approval_required": true,
+        "human_approval_supplied": false,
+        "external_action_executed": false,
+        "coverage_decision_executed": false,
+        "authorization_status": "BLOCKED",
+        "reason_code": "HUMAN_APPROVAL_REQUIRED"
+      },
+      "execution": null,
+      "external_action_executed": false,
+      "coverage_decision_executed": false,
+      "control_plane_status": "BLOCKED",
+      "reason_code": "HUMAN_APPROVAL_REQUIRED"
+    }
+  }
+}

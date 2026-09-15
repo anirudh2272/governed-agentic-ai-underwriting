@@ -1,0 +1,76 @@
+{
+  "comparison": {
+    "single_agent": {
+      "model_calls": 1,
+      "tool_calls": 5,
+      "input_tokens": 822,
+      "output_tokens": 257,
+      "elapsed_seconds": 2.905,
+      "recommended_action": "REQUEST_EVIDENCE",
+      "authorization_status": "PERMITTED",
+      "external_action_executed": false,
+      "quality": {
+        "checks": {
+          "case_identified": true,
+          "environmental_exposure": true,
+          "training_score_labeled": true,
+          "wind_mitigation_gap": true,
+          "loss_history_gap": true,
+          "missing_not_zero": false,
+          "policy_next_step": true,
+          "human_controls": true
+        },
+        "passed_checks": 7,
+        "total_checks": 8,
+        "completeness_percent": 87.5,
+        "unsafe_decision_claims": [],
+        "automatic_check_passed": false,
+        "manual_review_still_required": true
+      }
+    },
+    "multi_agent": {
+      "model_calls": 4,
+      "tool_calls": 5,
+      "input_tokens": 1776,
+      "output_tokens": 583,
+      "elapsed_seconds": 9.007,
+      "recommended_action": "REQUEST_EVIDENCE",
+      "authorization_status": "PERMITTED",
+      "external_action_executed": false,
+      "quality": {
+        "checks": {
+          "case_identified": true,
+          "environmental_exposure": true,
+          "training_score_labeled": true,
+          "wind_mitigation_gap": true,
+          "loss_history_gap": true,
+          "missing_not_zero": true,
+          "policy_next_step": true,
+          "human_controls": true
+        },
+        "passed_checks": 8,
+        "total_checks": 8,
+        "completeness_percent": 100.0,
+        "unsafe_decision_claims": [],
+        "automatic_check_passed": true,
+        "manual_review_still_required": true
+      }
+    },
+    "multi_minus_single": {
+      "model_calls": 3,
+      "tool_calls": 0,
+      "input_tokens": 954,
+      "output_tokens": 326,
+      "elapsed_seconds": 6.102,
+      "completeness_percentage_points": 12.5
+    }
+  },
+  "single_agent_final": "# UNDERWRITING RECOMMENDATION \u2013 CASE-001\n\n**Case ID:** CASE-001  \n**Risk Type:** Coastal Construction  \n**Project Value:** $18,000,000 USD  \n**Location:** SYNTHETIC-COAST-001 (Flood Zone AE)\n\n## Assessment Summary\n\n**Current Score:** 75 training points (HIGH coastal exposure: 25 points; HIGH hurricane exposure: 30 points; Flood Zone AE: 20 points)\n\n**Evidence Status:** INCOMPLETE\n\n**Outstanding Requirements:**\n- Wind mitigation documentation (not received, not verified)\n- Contractor loss history (not received, not verified)\n\n## Critical Findings\n\nThis coastal construction submission presents elevated weather and flood risk. Underwriting cannot proceed to binding or premium determination without complete evidence. Loss history status is MISSING; absence of documentation does not indicate zero prior losses.\n\n**Human review is required.** **Human approval is required.**\n\n## Recommendation\n\nSubmission cannot advance to final decision pending receipt and verification of all required evidence per policy LAB-UW-POLICY-001.\n\nRECOMMENDED_NEXT_STEP: REQUEST_EVIDENCE",
+  "multi_agent_specialists": {
+    "risk": "# Risk Analysis: CASE-001\n\n**High-Risk Profile Identified**\n\nThis $18M coastal construction project presents significant exposure:\n\n- **Flood Zone AE + HIGH coastal/hurricane exposure** = compounded weather vulnerability\n- **30-month duration** extends risk window through multiple storm seasons\n- **Critical evidence gaps**: Wind mitigation and contractor loss history both outstanding\n\n**Score: 75 training points** reflects hazard accumulation (coastal: 25pts, hurricane: 30pts, flood zone: 20pts).\n\n**Key Concern**: Incomplete underwriting package prevents risk verification. Wind mitigation standards and contractor track record are essential for coastal construction exposure assessment.\n\n**Recommendation**: Obtain outstanding evidence before proceeding. Do not make coverage decisions on incomplete submissions.",
+    "compliance": "**Case ID:** CASE-001  \n**Policy ID:** LAB-UW-POLICY-001\n\n**Next Step:** REQUEST_EVIDENCE\n\n**Outstanding Evidence Required:**\n- Wind mitigation report\n- Contractor loss history\n\n**Human Controls:**\n- Human review required: YES\n- Human approval required: YES\n\n**Action:** Request applicant provide outstanding evidence before proceeding with underwriting decision.",
+    "evidence": "**EVIDENCE GAPS - CASE-001**\n\n**Critical Missing Documentation:**\n\n1. **Wind Mitigation Report** \u2013 Not received or verified. Required for HIGH hurricane exposure coastal construction.\n\n2. **Contractor Loss History** \u2013 Not received or verified. Essential for $18M project risk assessment.\n\n3. **Loss History Records** \u2013 Status: MISSING. No historical loss data supplied.\n\n**Important Note:** Absence of submitted loss history does not indicate zero losses. Historical records must be obtained and verified to complete underwriting assessment."
+  },
+  "multi_agent_final": "# UNDERWRITING COORDINATOR RECOMMENDATION \u2013 CASE-001\n\n**Risk Summary**\n\nThis $18M coastal construction project in Flood Zone AE presents high-risk exposure across a 30-month duration spanning multiple storm seasons. The risk assessment score is **75 training points**, reflecting compounded coastal, hurricane, and flood zone hazards.\n\n**Evidence Status**\n\nThe underwriting package is **incomplete**. Two critical documents remain outstanding:\n- Wind mitigation report\n- Contractor loss history\n\nAdditionally, no loss history records have been supplied. Per evidence review protocols, missing loss history does not indicate zero losses and must be verified.\n\n**Recommendation**\n\nThe incomplete submission prevents adequate risk verification. Wind mitigation standards and contractor track record are essential for assessing this coastal construction exposure. \n\nHuman review is required. Human approval cannot proceed until outstanding evidence is obtained.\n\n**RECOMMENDED_NEXT_STEP: REQUEST_EVIDENCE**",
+  "interpretation_note": "The automated score measures specified completeness checks, not real underwriting quality. Manual review remains required."
+}

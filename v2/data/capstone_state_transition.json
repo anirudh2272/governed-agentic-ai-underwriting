@@ -1,0 +1,29 @@
+{
+  "phase_a": {
+    "route": "NO_LLM",
+    "control_plane_status": "COMPLETED",
+    "model_id": "NO_LLM",
+    "estimated_model_cost_usd": 0.0,
+    "model_calls": 0,
+    "response_text": "REQUEST_EVIDENCE",
+    "authorization_status": "PERMITTED",
+    "external_action_executed": false,
+    "coverage_decision_executed": false
+  },
+  "state_transition": {
+    "before_evidence_status": "INCOMPLETE",
+    "before_policy_next_step": "REQUEST_EVIDENCE",
+    "after_evidence_status": "COMPLETE",
+    "after_policy_next_step": "HUMAN_REVIEW",
+    "loss_history_status": "VERIFIED",
+    "loss_record_count": 2,
+    "state_version": 1,
+    "state_changed": true
+  },
+  "local_state_valid": true,
+  "separate_process_valid": true,
+  "transition_verified": true,
+  "model_calls": 0,
+  "estimated_model_cost_usd": 0.0,
+  "external_actions_executed": 0
+}

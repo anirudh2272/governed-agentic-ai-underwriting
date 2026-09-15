@@ -1,0 +1,56 @@
+{
+  "CASE-001": {
+    "case_id": "CASE-001",
+    "risk_type": "Coastal Construction",
+    "project_value_usd": 18000000,
+    "project_duration_months": 30,
+    "location": "SYNTHETIC-COAST-001",
+    "flood_zone": "AE",
+    "coastal_exposure": "HIGH",
+    "hurricane_exposure": "HIGH",
+    "required_evidence": [
+      "wind_mitigation",
+      "contractor_loss_history"
+    ],
+    "evidence": {
+      "wind_mitigation": {
+        "received": true,
+        "verified": true,
+        "document_id": "SYNTH-WIND-001",
+        "mitigation_rating": "PARTIAL",
+        "verification_source": "SYNTHETIC_CAPSTONE_REVIEW",
+        "source": "SYNTHETIC_CAPSTONE",
+        "updated_at": "2026-09-15T04:03:31.011992+00:00"
+      },
+      "contractor_loss_history": {
+        "received": true,
+        "verified": true,
+        "document_id": "SYNTH-LOSS-DOC-001",
+        "verification_source": "SYNTHETIC_CAPSTONE_REVIEW",
+        "source": "SYNTHETIC_CAPSTONE",
+        "updated_at": "2026-09-15T04:03:31.011992+00:00"
+      }
+    },
+    "loss_history_records": [
+      {
+        "record_id": "SYNTH-LOSS-001",
+        "loss_date": "2023-08-18",
+        "loss_type": "WIND_DAMAGE",
+        "incurred_loss_usd": 240000,
+        "status": "CLOSED",
+        "source": "SYNTHETIC_CAPSTONE"
+      },
+      {
+        "record_id": "SYNTH-LOSS-002",
+        "loss_date": "2024-06-11",
+        "loss_type": "WATER_INTRUSION",
+        "incurred_loss_usd": 85000,
+        "status": "CLOSED",
+        "source": "SYNTHETIC_CAPSTONE"
+      }
+    ],
+    "state_version": 1,
+    "state_updated_at": "2026-09-15T04:03:31.011992+00:00",
+    "state_update_source": "SYNTHETIC_CAPSTONE"
+  }
+}

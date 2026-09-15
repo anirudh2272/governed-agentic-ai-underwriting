@@ -1,0 +1,35 @@
+{
+  "candidate_id": "haiku_45_premium_candidate",
+  "qualified_entry_id": "haiku_45_premium_capstone",
+  "candidate_preserved": true,
+  "benchmark_ids": [
+    "case001_lab08_controlled_mcp",
+    "case001_lab09_single"
+  ],
+  "benchmark_sample_size": 2,
+  "benchmark_evidence_valid": true,
+  "qualification_scope": "SYNTHETIC_CASE001_CAPSTONE_ONLY",
+  "qualified_for_production": false,
+  "qualified_entry_valid": true,
+  "selection": {
+    "requested_route": "PREMIUM_REASONING",
+    "selection_status": "SELECTED",
+    "reason_code": "QUALIFIED_LOWEST_ESTIMATED_COST",
+    "catalog_entry_id": "haiku_45_premium_capstone",
+    "model_id": "claude-haiku-4-5-20251001",
+    "provider": "ANTHROPIC",
+    "capability_tier": "PREMIUM_REASONING",
+    "governance_status": "QUALIFIED_FOR_TRAINING",
+    "estimated_model_cost_usd": 0.005,
+    "qualification_sample_size": 2,
+    "allowed_for_consequential_decisions": false,
+    "model_call_executed": false,
+    "external_action_executed": false,
+    "coverage_decision_executed": false
+  },
+  "selection_valid": true,
+  "databricks_writes": 1,
+  "model_calls": 0,
+  "external_actions_executed": 0,
+  "qualification_verified": true
+}

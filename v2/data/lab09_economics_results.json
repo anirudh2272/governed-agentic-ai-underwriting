@@ -1,0 +1,99 @@
+{
+  "lab": "V2_LAB_09",
+  "experiment_scope": "ONE_CASE_ONE_RUN_NOT_STATISTICAL",
+  "model_id": "claude-haiku-4-5-20251001",
+  "price_source": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+  "pricing": {
+    "input_per_million": 1.0,
+    "output_per_million": 5.0
+  },
+  "shared_mcp_calls": 2,
+  "shared_mcp_latency_ms": 3.97,
+  "lab8_controlled_agent_baseline": {
+    "model_calls": 2,
+    "input_tokens": 2568,
+    "output_tokens": 428,
+    "estimated_model_cost_usd": 0.004708
+  },
+  "single_agent": {
+    "validation": {
+      "checks": {
+        "case_id": true,
+        "evidence_status": true,
+        "outstanding_evidence": true,
+        "policy_next_step": true,
+        "human_review": true,
+        "human_approval": true,
+        "authorization_boundary": true,
+        "recommendation": true
+      },
+      "valid": true
+    },
+    "economics": {
+      "model_calls": 1,
+      "input_tokens": 566,
+      "output_tokens": 99,
+      "total_tokens": 665,
+      "sequential_latency_ms": 1080.61,
+      "estimated_input_cost_usd": 0.000566,
+      "estimated_output_cost_usd": 0.000495,
+      "estimated_total_cost_usd": 0.001061
+    },
+    "authorization_status": "PERMITTED"
+  },
+  "multi_agent": {
+    "case_specialist_validation": {
+      "checks": {
+        "case_id": true,
+        "evidence_status": true,
+        "outstanding_evidence": true
+      },
+      "valid": true
+    },
+    "policy_specialist_validation": {
+      "checks": {
+        "policy_id": true,
+        "policy_next_step": true,
+        "human_review": true,
+        "human_approval": true
+      },
+      "valid": true
+    },
+    "coordinator_validation": {
+      "checks": {
+        "case_id": true,
+        "evidence_status": true,
+        "outstanding_evidence": true,
+        "policy_next_step": true,
+        "human_review": true,
+        "human_approval": true,
+        "authorization_boundary": true,
+        "recommendation": true
+      },
+      "valid": true
+    },
+    "team_valid": true,
+    "economics": {
+      "model_calls": 3,
+      "input_tokens": 1236,
+      "output_tokens": 190,
+      "total_tokens": 1426,
+      "sequential_latency_ms": 2640.37,
+      "estimated_input_cost_usd": 0.001236,
+      "estimated_output_cost_usd": 0.00095,
+      "estimated_total_cost_usd": 0.002186
+    },
+    "authorization_status": "PERMITTED"
+  },
+  "comparison": {
+    "same_physical_model": true,
+    "same_authoritative_data": true,
+    "same_output_contract": true,
+    "both_outcomes_valid": true,
+    "multi_to_single_cost_ratio": 2.06,
+    "multi_to_single_sequential_latency_ratio": 2.443,
+    "architecture_finding": "SINGLE_AGENT_PREFERRED_FOR_CASE_001",
+    "external_actions_executed": 0
+  },
+  "lab_verified": true
+}

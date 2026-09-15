@@ -1,0 +1,37 @@
+{
+  "case_id": "CASE-001",
+  "source": "SYNTHETIC_CAPSTONE",
+  "evidence": {
+    "wind_mitigation": {
+      "received": true,
+      "verified": true,
+      "document_id": "SYNTH-WIND-001",
+      "mitigation_rating": "PARTIAL",
+      "verification_source": "SYNTHETIC_CAPSTONE_REVIEW"
+    },
+    "contractor_loss_history": {
+      "received": true,
+      "verified": true,
+      "document_id": "SYNTH-LOSS-DOC-001",
+      "verification_source": "SYNTHETIC_CAPSTONE_REVIEW"
+    }
+  },
+  "loss_history_records": [
+    {
+      "record_id": "SYNTH-LOSS-001",
+      "loss_date": "2023-08-18",
+      "loss_type": "WIND_DAMAGE",
+      "incurred_loss_usd": 240000,
+      "status": "CLOSED",
+      "source": "SYNTHETIC_CAPSTONE"
+    },
+    {
+      "record_id": "SYNTH-LOSS-002",
+      "loss_date": "2024-06-11",
+      "loss_type": "WATER_INTRUSION",
+      "incurred_loss_usd": 85000,
+      "status": "CLOSED",
+      "source": "SYNTHETIC_CAPSTONE"
+    }
+  ]
+}

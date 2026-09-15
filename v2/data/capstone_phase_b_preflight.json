@@ -1,0 +1,73 @@
+{
+  "case_state": {
+    "case_id": "CASE-001",
+    "evidence_status": "COMPLETE",
+    "policy_next_step": "HUMAN_REVIEW",
+    "loss_history_status": "VERIFIED",
+    "loss_record_count": 2
+  },
+  "route_decision": {
+    "task_type": "UNDERWRITING_RECOMMENDATION",
+    "route": "PREMIUM_REASONING",
+    "model_required": true,
+    "requested_capability": "PREMIUM_REASONING",
+    "deterministic_result": null,
+    "reason_code": "HIGH_COMPLEXITY_OR_BUSINESS_RISK"
+  },
+  "data_classification": "SYNTHETIC_TRAINING",
+  "data_classification_allowed": true,
+  "model_selection": {
+    "requested_route": "PREMIUM_REASONING",
+    "selection_status": "SELECTED",
+    "reason_code": "QUALIFIED_LOWEST_ESTIMATED_COST",
+    "catalog_entry_id": "haiku_45_premium_capstone",
+    "model_id": "claude-haiku-4-5-20251001",
+    "provider": "ANTHROPIC",
+    "capability_tier": "PREMIUM_REASONING",
+    "governance_status": "QUALIFIED_FOR_TRAINING",
+    "estimated_model_cost_usd": 0.0055,
+    "qualification_sample_size": 2,
+    "allowed_for_consequential_decisions": false,
+    "model_call_executed": false,
+    "external_action_executed": false,
+    "coverage_decision_executed": false
+  },
+  "cost_policy": {
+    "estimated_model_cost_usd": 0.0055,
+    "maximum_model_cost_usd": 0.01,
+    "within_limit": true
+  },
+  "tool_policy": {
+    "allowed_tools": [
+      "base_score",
+      "compliance_rules",
+      "loss_history",
+      "submission",
+      "weather_risk"
+    ],
+    "claude_tool_definitions": [
+      "base_score",
+      "compliance_rules",
+      "loss_history",
+      "submission",
+      "weather_risk"
+    ],
+    "mcp_server_tools": [
+      "base_score",
+      "compliance_rules",
+      "loss_history",
+      "submission",
+      "weather_risk"
+    ],
+    "forbidden_tools_exposed": [],
+    "max_agent_steps": 6
+  },
+  "state_valid": true,
+  "route_valid": true,
+  "selection_valid": true,
+  "tool_policy_valid": true,
+  "preflight_verified": true,
+  "claude_api_calls": 0,
+  "mcp_tool_calls": 0,
+  "external_actions_executed": 0
+}

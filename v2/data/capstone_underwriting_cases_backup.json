@@ -1,0 +1,26 @@
+{
+  "CASE-001": {
+    "case_id": "CASE-001",
+    "risk_type": "Coastal Construction",
+    "project_value_usd": 18000000,
+    "project_duration_months": 30,
+    "location": "SYNTHETIC-COAST-001",
+    "flood_zone": "AE",
+    "coastal_exposure": "HIGH",
+    "hurricane_exposure": "HIGH",
+    "required_evidence": [
+      "wind_mitigation",
+      "contractor_loss_history"
+    ],
+    "evidence": {
+      "wind_mitigation": {
+        "received": false,
+        "verified": false
+      },
+      "contractor_loss_history": {
+        "received": false,
+        "verified": false
+      }
+    }
+  }
+}

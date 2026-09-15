@@ -1,0 +1,190 @@
+{
+  "case_id": "CASE-001",
+  "route_decision": {
+    "task_type": "UNDERWRITING_RECOMMENDATION",
+    "route": "PREMIUM_REASONING",
+    "model_required": true,
+    "requested_capability": "PREMIUM_REASONING",
+    "deterministic_result": null,
+    "reason_code": "HIGH_COMPLEXITY_OR_BUSINESS_RISK"
+  },
+  "model_selection": {
+    "requested_route": "PREMIUM_REASONING",
+    "selection_status": "SELECTED",
+    "reason_code": "QUALIFIED_LOWEST_ESTIMATED_COST",
+    "catalog_entry_id": "haiku_45_premium_capstone",
+    "model_id": "claude-haiku-4-5-20251001",
+    "provider": "ANTHROPIC",
+    "capability_tier": "PREMIUM_REASONING",
+    "governance_status": "QUALIFIED_FOR_TRAINING",
+    "estimated_model_cost_usd": 0.0055,
+    "qualification_sample_size": 2,
+    "allowed_for_consequential_decisions": false,
+    "model_call_executed": false,
+    "external_action_executed": false,
+    "coverage_decision_executed": false
+  },
+  "data_classification": "SYNTHETIC_TRAINING",
+  "policy_max_agent_steps": 6,
+  "execution_call_limit": 3,
+  "tools_used": [
+    "submission",
+    "weather_risk",
+    "compliance_rules",
+    "loss_history",
+    "base_score"
+  ],
+  "tool_payloads": {
+    "submission": {
+      "case_id": "CASE-001",
+      "risk_type": "Coastal Construction",
+      "project_value_usd": 18000000,
+      "project_duration_months": 30,
+      "location": "SYNTHETIC-COAST-001",
+      "flood_zone": "AE",
+      "coastal_exposure": "HIGH",
+      "hurricane_exposure": "HIGH",
+      "required_evidence": [
+        "wind_mitigation",
+        "contractor_loss_history"
+      ],
+      "evidence": {
+        "wind_mitigation": {
+          "received": true,
+          "verified": true,
+          "document_id": "SYNTH-WIND-001",
+          "mitigation_rating": "PARTIAL",
+          "verification_source": "SYNTHETIC_CAPSTONE_REVIEW",
+          "source": "SYNTHETIC_CAPSTONE",
+          "updated_at": "2026-09-15T04:03:31.011992+00:00"
+        },
+        "contractor_loss_history": {
+          "received": true,
+          "verified": true,
+          "document_id": "SYNTH-LOSS-DOC-001",
+          "verification_source": "SYNTHETIC_CAPSTONE_REVIEW",
+          "source": "SYNTHETIC_CAPSTONE",
+          "updated_at": "2026-09-15T04:03:31.011992+00:00"
+        }
+      },
+      "loss_history_records": [
+        {
+          "record_id": "SYNTH-LOSS-001",
+          "loss_date": "2023-08-18",
+          "loss_type": "WIND_DAMAGE",
+          "incurred_loss_usd": 240000,
+          "status": "CLOSED",
+          "source": "SYNTHETIC_CAPSTONE"
+        },
+        {
+          "record_id": "SYNTH-LOSS-002",
+          "loss_date": "2024-06-11",
+          "loss_type": "WATER_INTRUSION",
+          "incurred_loss_usd": 85000,
+          "status": "CLOSED",
+          "source": "SYNTHETIC_CAPSTONE"
+        }
+      ],
+      "state_version": 1,
+      "state_updated_at": "2026-09-15T04:03:31.011992+00:00",
+      "state_update_source": "SYNTHETIC_CAPSTONE",
+      "outstanding_evidence": [],
+      "evidence_status": "COMPLETE"
+    },
+    "weather_risk": {
+      "location": "SYNTHETIC-COAST-001",
+      "source": "SYNTHETIC_LAB_DATA",
+      "coastal_exposure": "HIGH",
+      "hurricane_exposure": "HIGH",
+      "flood_zone": "AE"
+    },
+    "compliance_rules": {
+      "case_id": "CASE-001",
+      "policy_id": "LAB-UW-POLICY-001",
+      "required_evidence": [
+        "wind_mitigation",
+        "contractor_loss_history"
+      ],
+      "outstanding_evidence": [],
+      "evidence_status": "COMPLETE",
+      "human_review_required": true,
+      "human_approval_required": true,
+      "next_step": "HUMAN_REVIEW"
+    },
+    "loss_history": {
+      "case_id": "CASE-001",
+      "evidence_status": "VERIFIED",
+      "received": true,
+      "verified": true,
+      "records": [
+        {
+          "record_id": "SYNTH-LOSS-001",
+          "loss_date": "2023-08-18",
+          "loss_type": "WIND_DAMAGE",
+          "incurred_loss_usd": 240000,
+          "status": "CLOSED",
+          "source": "SYNTHETIC_CAPSTONE"
+        },
+        {
+          "record_id": "SYNTH-LOSS-002",
+          "loss_date": "2024-06-11",
+          "loss_type": "WATER_INTRUSION",
+          "incurred_loss_usd": 85000,
+          "status": "CLOSED",
+          "source": "SYNTHETIC_CAPSTONE"
+        }
+      ]
+    },
+    "base_score": {
+      "case_id": "CASE-001",
+      "rule_set": "LAB-UW-SCORE-001",
+      "purpose": "Illustrative training score",
+      "score": 75,
+      "unit": "training_points",
+      "breakdown": [
+        {
+          "factor": "coastal_exposure",
+          "value": "HIGH",
+          "points": 25
+        },
+        {
+          "factor": "hurricane_exposure",
+          "value": "HIGH",
+          "points": 30
+        },
+        {
+          "factor": "flood_zone",
+          "value": "AE",
+          "points": 20
+        }
+      ]
+    }
+  },
+  "recommendation": "REFER",
+  "recommendation_text": "---\n\n## UNDERWRITING RECOMMENDATION \u2013 CASE-001\n\n**CASE_ID:**\nCASE-001\n\n**EVIDENCE_STATUS:**\nCOMPLETE \u2013 Wind mitigation (PARTIAL rating, verified) and contractor loss history both received and verified. No outstanding evidence.\n\n**RISK_FACTORS:**\nCoastal construction project; $18M value; 30-month duration. Location SYNTHETIC-COAST-001 exhibits HIGH coastal exposure, HIGH hurricane exposure, flood zone AE. Environmental risk is substantial.\n\n**LOSS_HISTORY:**\nTwo closed losses recorded: (1) Wind damage, $240,000 USD, August 2023; (2) Water intrusion, $85,000 USD, June 2024. Total incurred losses: $325,000 USD. Frequency and recency suggest ongoing vulnerability to named-peril events.\n\n**BASE_SCORE:**\n75 training points (illustrative; coastal exposure 25 pts, hurricane exposure 30 pts, flood zone AE 20 pts).\n\n**POLICY_NEXT_STEP:**\nHUMAN_REVIEW required per LAB-UW-POLICY-001. Human approval also required before coverage decision.\n\n**AI_RECOMMENDATION:**\nREFER\n\n**RATIONALE:**\nEvidence is complete and verified, but material risk factors converge: high coastal/hurricane exposure, AE flood zone, recent dual-peril loss history (wind and water), and only PARTIAL wind mitigation rating. The combination of elevated environmental hazard, prior loss frequency, and incomplete mitigation controls requires human underwriter judgment before final approval or decline.\n\n**AUTHORIZATION_BOUNDARY:**\nHUMAN_DECISION_REQUIRED",
+  "authorization_status": "PENDING_HUMAN_DECISION",
+  "metrics": {
+    "claude_api_calls": 3,
+    "mcp_tool_requests": 5,
+    "mcp_tool_calls": 5,
+    "rejected_tool_calls": 0,
+    "input_tokens": 5560,
+    "output_tokens": 662,
+    "model_latency_ms": 7923.31,
+    "mcp_latency_ms": 13.15,
+    "input_rate_per_million": 1.0,
+    "output_rate_per_million": 5.0,
+    "actual_model_cost_usd": 0.00887,
+    "cost_limit_usd": 0.01,
+    "stop_reason": "end_turn"
+  },
+  "validation": {
+    "tools_valid": true,
+    "authoritative_facts_valid": true,
+    "output_contract_valid": true,
+    "cost_valid": true,
+    "phase_b_verified": true
+  },
+  "external_action_executed": false,
+  "coverage_decision_executed": false
+}

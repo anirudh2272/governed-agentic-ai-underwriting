@@ -1,0 +1,53 @@
+{
+  "case_id": "CASE-001",
+  "decision_id": "CAPSTONE-CASE001-DECISION-001",
+  "final_status": "COMPLETE",
+  "state_history": {
+    "initial_state_version": 0,
+    "evidence_complete_state_version": 1,
+    "human_decision_state_version": 2,
+    "initial_policy_next_step": "REQUEST_EVIDENCE",
+    "current_policy_next_step": "HUMAN_REVIEW",
+    "current_workflow_status": "REFERRED_FOR_SPECIALIST_REVIEW"
+  },
+  "underwriting_result": {
+    "evidence_status": "COMPLETE",
+    "wind_mitigation": "PARTIAL",
+    "verified_loss_records": 2,
+    "total_incurred_loss_usd": 325000,
+    "ai_recommendation": "REFER",
+    "human_decision": "REFER",
+    "coverage_decision_status": "NOT_MADE"
+  },
+  "model_economics": {
+    "model_id": "claude-haiku-4-5-20251001",
+    "model_calls": 3,
+    "input_tokens": 5560,
+    "output_tokens": 662,
+    "actual_model_cost_usd": 0.00887,
+    "cost_limit_usd": 0.01,
+    "within_cost_limit": true
+  },
+  "mcp_tool_calls_in_final_audit": 3,
+  "claude_calls_in_final_audit": 0,
+  "databricks_reads_in_final_audit": 3,
+  "databricks_writes_in_final_audit": 0,
+  "stage_checks": {
+    "lab11_control_plane": true,
+    "phase_a_and_state_transition": true,
+    "scoped_model_qualification": true,
+    "phase_b_preflight": true,
+    "phase_b_recommendation": true,
+    "governed_mcp_shared_state": true,
+    "human_decision": true,
+    "local_human_telemetry": true,
+    "databricks_persistence_artifact": true,
+    "databricks_decision_audit": true,
+    "databricks_usage_ledger": true,
+    "authorization_boundary": true
+  },
+  "final_event_valid": true,
+  "external_action_executed": false,
+  "coverage_decision_executed": false,
+  "capstone_verified": true
+}
