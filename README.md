@@ -1,5 +1,7 @@
 # Governed Agentic AI Underwriting Control Plane
 
+[![Offline control-plane tests](https://github.com/anirudh2272/governed-agentic-ai-underwriting/actions/workflows/offline-tests.yml/badge.svg)](https://github.com/anirudh2272/governed-agentic-ai-underwriting/actions/workflows/offline-tests.yml)
+
 A synthetic training project demonstrating how to build and
 evaluate a governed AI-agent workflow with deterministic routing,
 dynamic model selection, controlled MCP tools, cost limits,
